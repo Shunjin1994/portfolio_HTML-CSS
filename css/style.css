@@ -46,7 +46,7 @@ section {
   z-index: 2; }
   .header.float-active {
     transition: .3s;
-    background: rgba(0, 0, 0, 0.9); }
+    background: rgba(0, 0, 0, 0.8); }
     .header.float-active .nav-menu .menu .menu-link {
       color: #fff; }
   @media screen and (max-width: 414px) {
@@ -187,8 +187,20 @@ section {
   @media screen and (max-width: 414px) {
     .pr .container {
       margin-left: -16px; } }
-  .pr .container figure {
+  .pr .container .thumbnail {
     width: 50%; }
+    .pr .container .thumbnail img {
+      width: 100%;
+      margin-left: 40px;
+      vertical-align: bottom;
+      transition: all .25s; }
+    .pr .container .thumbnail:hover {
+      cursor: pointer;
+      transition: all .25s; }
+  .pr .container .thumbnail--1 {
+    overflow: hidden; }
+    .pr .container .thumbnail--1 img:hover {
+      transform: scale(1.5) rotate(8deg); }
 
 .pr .content {
   width: 48%; }
@@ -278,8 +290,32 @@ section {
   justify-content: space-between;
   margin-bottom: 120px;
   align-items: center; }
-  .development .container figure {
-    width: 60%; }
+  .development .container .thumbnail {
+    width: 60%;
+    margin-right: 40px;
+    position: relative; }
+    .development .container .thumbnail img {
+      width: 100%;
+      vertical-align: bottom;
+      transition: all .25s; }
+      .development .container .thumbnail img:hover {
+        cursor: pointer;
+        transition: all .25s; }
+    .development .container .thumbnail .thumbnailCover {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: all .25s;
+      transform: scale(1.1); }
+      .development .container .thumbnail .thumbnailCover:hover {
+        opacity: 1;
+        transition: all .25s;
+        transform: scale(1); }
+    .development .container .thumbnail .thumbnailCover--2 {
+      background: rgba(0, 0, 0, 0.6); }
 
 .development .content {
   width: 48%; }
@@ -296,6 +332,16 @@ section {
   .contact form .button {
     display: flex;
     justify-content: space-between; }
+    .contact form .button .btn--scale:hover {
+      transition: all 1s;
+      transform: scale(2, 2); }
+    .contact form .button .btn--rotate:hover {
+      transition: all 1s;
+      transform: rotate(360deg); }
+    .contact form .button .btn--skew:hover {
+      transition: all 1s;
+      transform: skewX(25deg);
+      transform: skewY(-25deg); }
     @media screen and (max-width: 414px) {
       .contact form .button {
         display: block; } }
@@ -321,9 +367,8 @@ section {
     padding: 15px 30px;
     color: white;
     float: left;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 3px; }
+    border-radius: 3px;
+    transition: all 1s; }
     @media screen and (max-width: 414px) {
       .contact form input[type="submit"] {
         width: 100%;

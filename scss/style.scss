@@ -90,7 +90,7 @@ section {
   z-index: 2;
   &.float-active {
     transition: .3s;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     & .nav-menu .menu .menu-link{
       color: #fff;
     }
@@ -264,10 +264,6 @@ section {
 }
 
 .pr{
-  // & .container-title{
-  //   margin-bottom: 50px;
-  //   text-align: center;
-  // }
   & .container{
     display: flex;
     width: 100%;
@@ -277,8 +273,24 @@ section {
     @include mq() {
       margin-left: -16px;
     }
-    & figure{
+    & .thumbnail{
       width: 50%;
+      & img{
+        width: 100%;
+        margin-left: 40px;
+        vertical-align: bottom;
+        transition: all .25s;
+      }
+      &:hover{
+        cursor: pointer;
+        transition: all .25s;
+      }
+    }
+    & .thumbnail--1{
+      overflow: hidden;
+      & img:hover{
+        transform: scale(1.5) rotate(8deg);
+      }
     }
   }
   & .content{
@@ -392,10 +404,6 @@ section {
 }
 
 .development{
-  // & .container-title{
-  //   margin-bottom: 50px;
-  //   text-align: center;
-  // }
   & p{
     text-align: center;
   }
@@ -406,8 +414,37 @@ section {
     justify-content: space-between;
     margin-bottom: 120px;
     align-items: center;
-    & figure{
+    & .thumbnail{
       width: 60%;
+      margin-right: 40px;
+      position: relative;
+      & img{
+        width: 100%;
+        vertical-align: bottom;
+        transition: all .25s;
+        &:hover{
+          cursor: pointer;
+          transition: all .25s;
+        }
+      }
+      & .thumbnailCover{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: all .25s;
+        transform: scale(1.1);
+        &:hover{
+          opacity: 1;
+          transition: all .25s;
+          transform: scale(1);
+        }
+      }
+      & .thumbnailCover--2{
+        background: rgba(0, 0, 0, .6);
+      }
     }
   }
   & .content{
@@ -433,6 +470,19 @@ section {
     & .button{
       display: flex;
       justify-content: space-between;
+      & .btn--scale:hover{
+        transition: all 1s;
+        transform: scale(2, 2);
+      }
+      & .btn--rotate:hover{
+        transition: all 1s;
+        transform: rotate(360deg);
+      }
+      & .btn--skew:hover{
+        transition: all 1s;
+        transform: skewX(25deg);
+        transform: skewY(-25deg);
+      }
       @include mq() {
         display: block;
       }
@@ -462,6 +512,7 @@ section {
       color: white;
       float: left;
       border-radius: 3px;
+      transition: all 1s;
       @include mq() {
         width: 100%;
         float: none;

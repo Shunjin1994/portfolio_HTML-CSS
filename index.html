@@ -35,17 +35,19 @@
  <main>
     <section class="pr" id="pr">
         <div class="container">
-            <figure><img src="img/img2.jpg" alt=""></figure>
-              <div class="content">
-                <h2 class="container-title"><span>自己紹介</span></h2>
-                <p>
-                    初めまして。西島颯人と申します。<br>
-                    WEBエンジニアとして働きたいと思っています。<br>
-                    使用可能な技術は以下になります。<br>
-                    ・HTML/CSS<br>
-                    ・JavaScript<br>
-                    ・PHP/MySQL<br>
-                </p>
+            <div class="thumbnail thumbnail--1">
+              <img src="img/img2.jpg">
+            </div>
+            <div class="content">
+              <h2 class="container-title"><span>自己紹介</span></h2>
+              <p>
+                  初めまして。西島颯人と申します。<br>
+                  WEBエンジニアとして働きたいと思っています。<br>
+                  使用可能な技術は以下になります。<br>
+                  ・HTML/CSS<br>
+                  ・JavaScript<br>
+                  ・PHP/MySQL<br>
+              </p>
             </div>
         </div>
     </section>
@@ -68,19 +70,29 @@
         <div class="container">
           <h2 class="container-title">利用できる技術</h2>
           <ul>
-              <li><figure><img src="img/img_html.jpg" alt=""></figure><h3>HTML/CSS</h3></li>
-              <li><figure><img src="img/img_js.jpg" alt=""></figure><h3>JavaScript</h3></li>
-              <li><figure><img src="img/img_php.jpg" alt=""></figure><h3>PHP/MySQL</h3></li>
+              <li><figure><img src="img/img_html.jpg"></figure><h3>HTML/CSS</h3></li>
+              <li><figure><img src="img/img_js.jpg"></figure><h3>JavaScript</h3></li>
+              <li><figure><img src="img/img_php.jpg"></figure><h3>PHP/MySQL</h3></li>
           </ul>
         </div>
     </section>
 
     <section class="development" id="development">
         <div class="container">
-          <figure><img src="img/img3.jpg" alt=""></figure>
+          <div class="thumbnail">
+            <img src="img/img3.jpg">
+            <div class="thumbnailCover thumbnailCover--2"></div>
+          </div>
             <div class="content">
               <h2 class="container-title"><span>開発実績</span></h2>
-                <p>フリマアプリ</p>
+                <p>●フリマアプリ</p>
+                <p>利用できる技術を使用して機能追加をしました</p>
+                <p>★追加した機能</p>
+                <p>・ログイン失敗が一定回数を越えるとロックされる</p>
+                <p>・値段のソート</p>
+                <p>・閲覧履歴</p>
+                <p>・JavaScriptを利用したアカウント登録時のバリデーション</p>
+                <p>・Ajaxを利用したアカウントの存在確認</p>
             </div>
         </div>
     </section>
@@ -93,7 +105,9 @@
             <input type="text" placeholder="E-mail" name="email" autocomplete="off"><br />
             <textarea cols="100" rows="10" placeholder="内容" name="comment"></textarea><br />
             <div class="button">
-              <input type="submit" name="submit" value="話を聞く！">
+              <input type="submit" name="submit" class="btn--scale" value="話を聞く！">
+              <input type="submit" name="submit" class="btn--rotate" value="スカウトする！">
+              <input type="submit" name="submit" class="btn--skew" value="雇う！">
             </div>
           </form>
         </div>
